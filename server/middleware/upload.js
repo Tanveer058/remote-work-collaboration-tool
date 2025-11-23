@@ -1,24 +1,7 @@
 import multer from 'multer';
-import path from 'path';
-import fs from 'fs';
 
-// Create uploads directory if it doesn't exist
-const uploadDir = './uploads';
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir, { recursive: true });
-}
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, uploadDir);
-  },
-  filename: (req, file, cb) => {
-    // Create unique filename with timestamp and original name
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    const originalName = file.originalname.replace(/[^a-zA-Z0-9.]/g, '_');
-    cb(null, uniqueSuffix + '-' + originalName);
-  }
-});
+// Use memory storage for Vercel compatibility
+const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, cb) => {
   // Check file types
@@ -55,17 +38,4 @@ export const upload = multer({
   fileFilter: fileFilter
 });
 
-// Clean up temporary files after upload
-export const cleanupTempFiles = (files) => {
-  if (files && Array.isArray(files)) {
-    files.forEach(file => {
-      try {
-        if (fs.existsSync(file.path)) {
-          fs.unlinkSync(file.path);
-        }
-      } catch (error) {
-        console.error('Error cleaning up temp file:', error);
-      }
-    });
-  }
-};
+// No cleanup needed since we're using memory storage

@@ -1,7 +1,6 @@
 import Task from '../models/Task.js';
 import { upload } from '../middleware/upload.js';
 import { uploadToCloudinary, deleteFromCloudinary } from '../config/cloudinary.js';
-import { cleanupTempFiles } from '../middleware/upload.js';
 
 // Export multer upload for use in routes
 export { upload };

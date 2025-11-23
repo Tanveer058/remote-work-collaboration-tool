@@ -9,19 +9,28 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-export const uploadToCloudinary = async (filePath, folder = 'task-submissions') => {
-  try {
-    const result = await cloudinary.uploader.upload(filePath, {
-      folder: folder,
-      resource_type: 'auto',
-      use_filename: true,
-      unique_filename: true
-    });
-    return result;
-  } catch (error) {
-    console.error('Cloudinary upload error:', error);
-    throw new Error('File upload failed');
-  }
+// Updated to handle buffer uploads (for Vercel)
+export const uploadToCloudinary = (buffer, folder = 'task-submissions') => {
+  return new Promise((resolve, reject) => {
+    const uploadStream = cloudinary.uploader.upload_stream(
+      {
+        folder: folder,
+        resource_type: 'auto',
+        use_filename: true,
+        unique_filename: true
+      },
+      (error, result) => {
+        if (error) {
+          console.error('Cloudinary upload error:', error);
+          reject(new Error('File upload failed'));
+        } else {
+          resolve(result);
+        }
+      }
+    );
+    
+    uploadStream.end(buffer);
+  });
 };
 
 export const deleteFromCloudinary = async (publicId) => {
