@@ -7,7 +7,7 @@ import RootRedirect from './components/auth/RootRedirect';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ManagerDashboard from './components/manager/ManagerDashboard';
-import TeamLeadDashboard from './components/teamlead/TeamLeadDashboard';
+import TeamLeadDashboard from './components/teamLead/TeamLeadDashboard';
 import MemberDashboard from './components/member/MemeberDashboard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
