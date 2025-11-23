@@ -12,7 +12,14 @@ const app = express();
 
 connectDB();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  // origin: 'http://localhost:5173', // for local testing
+  origin: 'https://remote-work-collaboration-tool.vercel.app', // production client URL
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+app.use(express.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));
