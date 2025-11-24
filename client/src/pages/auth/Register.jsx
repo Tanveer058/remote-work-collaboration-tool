@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { register as registerService } from '../services/authService';
+import { register as registerService } from '../../services/authService';
 import { toast } from 'react-toastify';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../../context/ThemeContext';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';

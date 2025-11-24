@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo } from 'react';
-import Navbar from '../common/Navbar';
-import TaskManagement from './TaskManagement';
-import CreateTaskModal from './CreateTaskModal';
-import ViewSubmittedTaskModal from './ViewSumittedTaskModal';
+import Navbar from '../../components/common/Navbar';
+import TaskManagement from '../../components/teamLead/TaskManagement';
+import CreateTaskModal from '../../components/teamLead/CreateTaskModal';
+import ViewSubmittedTaskModal from '../../components/teamLead/ViewSumittedTaskModal';
 import { getMyTeam } from '../../services/teamService';
 import { getTeamTasks } from '../../services/taskService';
 import GroupIcon from '@mui/icons-material/Group';

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Navbar from '../common/Navbar';
-import TaskList from './TaskList';
-import TaskSubmissionModal from './TaskSubmissionModal';
+import Navbar from '../../components/common/Navbar';
+import TaskList from '../../components/member/TaskList';
+import TaskSubmissionModal from '../../components/member/TaskSubmissionModal';
 import { getMyTasks } from '../../services/taskService';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';

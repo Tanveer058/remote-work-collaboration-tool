@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContex';
-import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../../context/AuthContex';
+import { useTheme } from '../../context/ThemeContext';
 import { toast } from 'react-toastify';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';

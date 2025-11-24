@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import Navbar from '../common/Navbar';
-import TeamManagement from './TeamManagement';
-import UserManagement from './UserManagement';
-import CreateTeamModal from './CreateTeamModal';
+import Navbar from '../../components/common/Navbar';
+import TeamManagement from '../../components/manager/TeamManagement';
+import UserManagement from '../../components/manager/UserManagement';
+import CreateTeamModal from '../../components/manager/CreateTeamModal';
 import { getAllTeams } from '../../services/teamService';
 import { getAllUsers } from '../../services/authService';
 import GroupIcon from '@mui/icons-material/Group';

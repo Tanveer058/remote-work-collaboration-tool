@@ -4,11 +4,11 @@ import { ThemeProvider } from './context/ThemeContext';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import PublicRoute from './components/auth/PublicRoute';
 import RootRedirect from './components/auth/RootRedirect';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import ManagerDashboard from './components/manager/ManagerDashboard';
-import TeamLeadDashboard from './components/teamLead/TeamLeadDashboard';
-import MemberDashboard from './components/member/MemeberDashboard';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
+import ManagerDashboard from './pages/manager/ManagerDashboard';
+import TeamLeadDashboard from './pages/teamLead/TeamLeadDashboard';
+import MemberDashboard from './pages/member/MemeberDashboard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
