@@ -221,6 +221,25 @@ const Login = () => {
               Contact your administrator to get your login credentials.
             </p>
           </div>
+          {/* Demo Credentials */}
+          <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-900/20 border border-gray-200 dark:border-gray-700 rounded-lg">
+            <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-2 text-center">
+              Test Login Credentials
+            </h3>
+            <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-2">
+              <li>
+                <span className="font-medium">Manager:</span> tanveer@gmail.com / tanveer123
+              </li>
+              <li>
+                <span className="font-medium">Team Lead:</span> raufgmail.com / rauf123
+              </li>
+              <li>
+                <span className="font-medium">Member:</span> Signup, the default role is <span className="font-semibold">member</span>
+              </li>
+            </ul>
+            <span className="text-sm text-gray-700 dark:text-gray-300 space-y-2">These are just for testing the different dashboards!</span>
+
+          </div>
         </div>
       </div>
     </div>
